@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Networking Basics Cheat Sheet</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    h1 {
+      color: #2c3e50;
+      text-align: center;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: left;
+    }
+    th {
+      background-color: #2c3e50;
+      color: white;
+    }
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+    .mnemonic {
+      background-color: #e8f4f8;
+      padding: 15px;
+      border-radius: 5px;
+      margin: 20px 0;
+    }
+    .example {
+      background-color: #f8e8e8;
+      padding: 15px;
+      border-radius: 5px;
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Networking Basics Cheat Sheet</h1>
+
+  <h2>OSI Model</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Layer</th>
+        <th>Name</th>
+        <th>Purpose</th>
+        <th>Example</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>7</td>
+        <td>Application</td>
+        <td>User-facing apps (HTTP, FTP, email).</td>
+        <td>Web browsers, Gmail, APIs.</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>Presentation</td>
+        <td>Data formatting (encryption, compression).</td>
+        <td>SSL/TLS, JPEG/MPEG encoding.</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>Session</td>
+        <td>Manages connections between devices.</td>
+        <td>VPNs, NetBIOS.</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Transport</td>
+        <td>End-to-end communication (TCP/UDP).</td>
+        <td>Port numbers, flow control.</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Network</td>
+        <td>Routing data between networks (IP addresses).</td>
+        <td>Routers, IP packets.</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Data Link</td>
+        <td>Direct communication between devices (MAC).</td>
+        <td>Switches, Ethernet frames.</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>Physical</td>
+        <td>Physical hardware (cables, Wi-Fi signals).</td>
+        <td>Fiber optics, hubs, NICs.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="mnemonic">
+    <h2>How to Memorize the OSI Model</h2>
+    <p><strong>Mnemonic</strong>: <em>"All People Seem To Need Data Processing"</em></p>
+    <ul>
+      <li><strong>A</strong>pplication → <strong>A</strong>ll</li>
+      <li><strong>P</strong>resentation → <strong>P</strong>eople</li>
+      <li><strong>S</strong>ession → <strong>S</strong>eem</li>
+      <li><strong>T</strong>ransport → <strong>T</strong>o</li>
+      <li><strong>N</strong>etwork → <strong>N</strong>eed</li>
+      <li><strong>D</strong>ata Link → <strong>D</strong>ata</li>
+      <li><strong>P</strong>hysical → <strong>P</strong>rocessing</li>
+    </ul>
+  </div>
+
+  <h2>TCP/IP Model</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Layer</th>
+        <th>Name</th>
+        <th>Purpose</th>
+        <th>Example</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>4</td>
+        <td>Application</td>
+        <td>User-facing apps (HTTP, FTP, DNS).</td>
+        <td>Web browsers, email clients.</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Transport</td>
+        <td>End-to-end communication (TCP/UDP).</td>
+        <td>Port numbers, flow control.</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Internet</td>
+        <td>Routing data between networks (IP addresses).</td>
+        <td>Routers, IP packets.</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>Network Access</td>
+        <td>Physical hardware and MAC addresses.</td>
+        <td>Ethernet, Wi-Fi.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="example">
+    <h2>Subnetting Basics</h2>
+    <p><strong>Subnet Mask</strong>: Defines network vs. host portions of an IP address.</p>
+    <ul>
+      <li><strong>/24</strong>: 255.255.255.0 (256 IPs, 254 usable).</li>
+      <li><strong>/16</strong>: 255.255.0.0 (65,536 IPs).</li>
+    </ul>
+    <p><strong>Practice</strong>: Use <a href="https://subnettingpractice.com" target="_blank">SubnettingPractice.com</a>.</p>
+  </div>
+
+  <h2>Common Networking Tools</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Tool</th>
+        <th>Purpose</th>
+        <th>Example</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Wireshark</td>
+        <td>Packet analysis (Layers 2–7).</td>
+        <td>Detect malicious traffic.</td>
+      </tr>
+      <tr>
+        <td>Nmap</td>
+        <td>Network scanning (Layers 3–4).</td>
+        <td>Find open ports on a server.</td>
+      </tr>
+      <tr>
+        <td>Ping</td>
+        <td>Test connectivity (Layer 3).</td>
+        <td>Check if a device is online.</td>
+      </tr>
+      <tr>
+        <td>Traceroute</td>
+        <td>Trace packet path (Layer 3).</td>
+        <td>Identify network hops.</td>
+      </tr>
+    </tbody>
+  </table>
+
+</body>
+</html>
